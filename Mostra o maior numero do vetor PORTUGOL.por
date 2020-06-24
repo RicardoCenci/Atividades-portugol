@@ -1,6 +1,6 @@
 programa
 {
-	//O usuario escreve um vertor de 10 itens e o algoritimo retorna o MAIOR numero do vertor, com FUNÇÕES
+	//O usuario escreve um vertor de 10 itens e o algoritimo retorna o MAIOR numero do vetor, com FUNÇÕES
 	 
 	funcao inicio()
 	{
@@ -8,36 +8,29 @@ programa
 				x,
 				maiorNum=0
 
-			escreva
-				("Escreva 10 numeros para o vetor \n")
-			para//ESTRUTURA DE REPETIÇÃO PARA LER OS NUMEROS DO VETOR
-			(x=0;x<10;x++)//CASO SEJA NECESSARIO COLOCAR NUMEROS ALEATORIOS NAS POSIÇÕES DOS VETORES RETIRAR O LEIA
+			escreva("Escreva 10 numeros para o vetor \n")
+			
+			para(x=0;x<10;x++)	//ESTRUTURA DE REPETIÇÃO PARA LER OS NUMEROS DO VETOR
 				{
-					leia//LE A POSIÇÃO X DO VETOR
-						(VETOR[x])
+					//CASO SEJA NECESSARIO COLOCAR NUMEROS ALEATORIOS NAS POSIÇÕES DOS VETORES RETIRAR O LEIA
+					leia(VETOR[x])	//LE A POSIÇÃO X DO VETOR
 				}
 				
-			para//Percorre o vertor procurando o maior numero
-			(x=0;x<10;x++)
-				{
-					maiorNum=testaMaior(maiorNum,VETOR[x])//Passa as variaveis para a Função que testa o numero e atribui o retorno da função na variavel
-				}
+			para( x=0 ; x < 10 ; x++ ){	//Percorre o vetor procurando o maior numero
+				maiorNum = testaMaior( maiorNum , VETOR[x] ) //Passa as variaveis para a Função que testa o numero e atribui o retorno da função na variavel
+			}
 				
-			escreva
-				("O maior numero do vetor é ", maiorNum)
+			escreva("O maior numero do vetor é ", maiorNum)
 	}
 	
 	funcao inteiro testaMaior(inteiro MaiorNum,inteiro VetorNum)
 	{
-		se//Se o MaiorNumero atual for MAIOR que a posição do vetor, ele retorna o maior numero
-		(MaiorNum>VetorNum)
-		{
-			retorne MaiorNum//Retorna o numero DO MaiorNum para ser atribuido a variavel maiorNUM
-		}
-		
-		senao//Se o numero do VETOR não é menor que o MAIOR NUMERO, entao obviamente o NUMERO DO VETOR É O MAIOR NUMERO 
-		{
+		se( MaiorNum > VetorNum ){ //Se o MaiorNumero atual for MAIOR que a posição atual do vetor, ele retorna o maior numero
+			retorne MaiorNum //Retorna o numero DO MaiorNum para ser atribuido a variavel maiorNUM
+			
+		}senao{			//Se o numero do VETOR não é menor que o MAIOR NUMERO, entao obviamente o NUMERO DO VETOR É O MAIOR NUMERO 
 			retorne VetorNum//Retorna o Numero do VETOR para ser atribuido a variavel maiorNum
+			
 		}
 	}
 }
